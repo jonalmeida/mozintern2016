@@ -11,35 +11,19 @@
 <!-- put your slides -->
 
 <template layout="cover" type="text/x-markdown">
-# Talkie.js
+# Life is still hard
 
-HTML/CSS/JavaScript Presentation Library
+[:jonalmeida]
 
-Go to [repository](https://github.com/ahomu/Talkie)
+(Returning) Mobile Intern
 </template>
 
 <template layout="bullets" type="text/x-markdown">
-## Feature
+## Developing the idea
 
-- Markdown support
-- Code highlighting
-- Responsive scaling
-- FullScreen mode (press `F`)
-- Pointer mode (press `B`)
-- Layout attributes (WIP)
-- Progress indicator
-</template>
+I have a huge tab management problem.
 
-<template layout="bullets" type="text/x-markdown">
-## 機能 (Japanese)
-
-- Markdown書けるよ (੭ु˵＞ヮ＜)੭ु⁾⁾
-- ハイライトばっちり _:(°ω° 」∠):＿
-- レスポンシブだよ (^з^)-☆
-- フルスクリーン対応 (press `F`) (｡•̀ᴗ-)✧
-- ポインターだせるよ (press `B`) ( ꒪◡꒪)
-- 属性でレイアウトできるよ (*´▽`)
-- 進行度インジゲータあるよ c⌒っ.ω.)っ
+<img style="width: 70%;" src="./content/tb-desktop.png">
 </template>
 
 <template layout="code" type="text/x-markdown">
@@ -66,17 +50,6 @@ Go to [repository](https://github.com/ahomu/Talkie)
 ## in Markdown
 
 ```html
-<script layout="title" type="text/x-markdown">
-# Section Title
-Lorem ipsum dolor sit amet, consect...
-</script>
-
-<script layout="bullets" type="text/x-markdown">
-## The bullets
-- Foo
-- Bar
-- Baz
-</script>
 ```
 
 You can use `template` element instead of `script`.
@@ -201,7 +174,7 @@ var exports = Talkie();
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
 <script src="./dist/talkie.min.js"></script>
 <script>
-var talkie = Talkie({wide: true});
+var talkie = Talkie({wide: false});
 
 talkie.key('s').subscribe(talkie.next$);
 talkie.key('n').subscribe(talkie.next$);
