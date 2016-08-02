@@ -152,9 +152,9 @@ For me, it was trying to fix the bug myself so that I could see what were the pr
 </template>
 
 <template layout="bullets" type="text/x-markdown">
-# What I'm Currently Working On
+### What I'm Currently Working On
 
-## Activity Stream
+#### Activity Stream on Android
 
 - The activity stream is a rich visual feed of your history and bookmarks.
 - It's a new newtab experience for desktop (installed via Test Pilot)
@@ -165,15 +165,17 @@ For me, it was trying to fix the bug myself so that I could see what were the pr
 
 <template layout="bullets" type="text/x-markdown">
 ## TL;DR - we want this..
-  - ![desktop](./content/as-desktop.png)
+![desktop](./content/as-desktop.png)
 </template>
 
 <template layout="bullets" type="text/x-markdown">
-  - ![mock](./content/mock.png)
+## to look like this..
+<img style="width: 30%;" src="./content/as-panel-mock.png">
 </template>
 
 <template layout="bullets" type="text/x-markdown">
-  - ![mock](./content/mock-proto-2.png)
+## but right now..
+<img style="width: 30%;" src="./content/mock-proto-3.png">
 </template>
 
 <template layout="bullets" type="text/x-markdown">
@@ -186,30 +188,6 @@ For me, it was trying to fix the bug myself so that I could see what were the pr
 
 <template layout="bullets" type="text/x-markdown">
 # ty ty
-</template>
-
-<script layout="code" type="text/x-markdown">
-## All Exports
-
-```typescript
-interface TalkieExports {
-  key: (charKey: string) => Observable<KeyboardEvent>;
-  notes: { [pageNum: number]: string };
-  changed: Observable<HTMLElement>;
-  ratio: Observable<number>;
-  next$: Subject<void>;
-  prev$: Subject<void>;
-  jump$: Subject<number>;
-}
-
-var exports = Talkie();
-```
-</script>
-
-<template layout="cover" type="text/x-markdown">
-## Enjoy!
-
-[ahomu/Talkie - GitHub.com](https://github.com/ahomu/Talkie)
 </template>
 
 <script src="./dist/highlight.min.js"></script>
