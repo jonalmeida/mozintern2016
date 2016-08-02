@@ -11,14 +11,36 @@
 <!-- put your slides -->
 
 <template layout="cover" type="text/x-markdown">
-# Life is still hard
 
-[:jonalmeida]
+Jonathan Almeida [:jonalmeida]
 
 Mobile Intern
-<p>
-  CS Major @ University of Windsor
-</p>
+
+CS Major @ University of Windsor
+</template>
+
+<template layout="cover" type="text/x-markdown">
+# Life is still hard
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+# Overview
+
+- Prototypes
+- Mentoring bugs
+- Other things
+- What I'm currently working on..
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+# Prototyping the future
+
+- User Research sessions at London All Hands
+- Workflows performing particular asks.
+- Insights for Shopping:
+  - Tab comparison integration
+  - Share/save within the browser
+
 </template>
 
 <template layout="bullets" type="text/x-markdown">
@@ -30,126 +52,140 @@ I have a huge tab management problem.
 
 -----
 - This resonated with me since I used the Tab Groups feature in Firefox which is now discontinued and moved to a separate addon.
-- foo
 </template>
 
 <template layout="bullets" type="text/x-markdown">
 ## What I wanted..
 
 A tab organizer that did EVERYTHING!
-  - Automatic grouping with arbitrary groups
+  - Automatic grouping into arbitrary groups
   - Sync with desktop
   - Custom Tabs for fast page loading on mobile
 
 <img style="width: 30%;" src="./content/all-the.jpg">
 </template>
 
-<template layout="code" type="text/x-markdown">
-## in HTML
-
-```html
-```
-</template>
-
-<template layout="code" type="text/x-markdown">
-## in Markdown
-
-```html
-```
-
-You can use `template` element instead of `script`.
-</template>
-
-<template layout="code" type="text/x-markdown">
-## Backface image & filter
-
-```html
-<section layout
-         backface="background-image.jpg"
-         backface-filter="blur(1px) brightness(.8)">
-
-  <h1>Title</h1>
-  <p>foo, bar, baz, qux...</p>
-
-</section>
-```
-</template>
-
-<template layout="title" invert type="text/x-markdown"
-          backface="https://farm8.staticflickr.com/7469/16209884502_211d01ac0d_z_d.jpg"
-          backface-filter="blur(3px) brightness(.9)">
-# Backface (北極)
-
-`backface-filter="blur(3px) brightness(.9)"`
-</template>
-
 <template layout="bullets" type="text/x-markdown">
-## FullScreen mode
+## Developing the idea
 
-When you press the **"f"** key will be a full-screen mode. "f" or "Esc" key Press and then exit.
-</template>
-
-<template layout="bullets" type="text/x-markdown">
-## Pointer mode
-
-When you press the **"b"** key, the pointer `visibility` is toggled
-</template>
-
-<template layout="bullets" type="text/x-markdown">
-## Presenter note
-
-Open developer tools, will show presenter notes
+- Using Hammock-driven development
+  - Identifying the problem we're trying to solve
+  - Facts (what do you know about the problem?)
+  - Context (relevant background info, e.g. team uses framework X)
+  - Constraints (hard requirements)
+  - What don't you know?
+  - Solutions to similar problems?
 
 -----
 
-Yes! This is your note!
+With the help of mcomella, we started to look at this from the perspect of Hammock-driven development and ask myself: What is the problem I'm trying to solve?
 </template>
 
-<template layout="code" type="text/x-markdown">
-## Custom key binding & control (1/2)
+<template layout="bullets" type="text/x-markdown">
+## Brainstorming
 
-```javascript
-var talkie  = Talkie({wide:false});
+![brain storming](./content/whiteboarding-1.png)
 
-talkie.key('space').subscribe(talkie.next$);
-talkie.key('s').subscribe(talkie.next$);
-talkie.key('n').subscribe(talkie.next$);
-talkie.key('a').subscribe(talkie.prev$);
-talkie.key('p').subscribe(talkie.prev$);
-```
+-----
+
+- I spent some time brainstorming and whiteboarding things that weren't so clear.
+- E.g. "Switching between tabs is quicker. What exactly is quicker? Why is it..?"
+
 </template>
 
-<template layout="code" type="text/x-markdown">
-## Custom key binding & control (2/2)
+<template layout="bullets" type="text/x-markdown">
 
-```javascript
-window.next = function() {
-  talkie.next$.next();
-};
-window.prev = function() {
-  talkie.prev$.next();
-};
-window.jump = function(num) {
-  talkie.jump$.next(num);
-};
-```
+![brain storming](./content/whiteboarding-2.png)
+
+-----
+
+- From these, I narrowed down what I was trying to solve and why I felt it was better.
+- I started working on a prototype that did the essentials of what I wanted it to do.
+
 </template>
 
-<template layout="code" type="text/x-markdown">
-## All Options
+<template layout="bullets" type="text/x-markdown">
+## Tab Groups
 
-```typescript
-interface TalkieOptions {
-  wide?: boolean;
-  control?: boolean;
-  pointer?: boolean;
-  progress?: boolean;
-  backface?: boolean;
-  notransition?: boolean;
-}
+<video preload="meta" controls loop height="70%" alt="Tab grouping demo goes here">
+    <source src="content/tb-demo.mp4" type="video/mp4" />
+</video>
 
-Talkie(options);
-```
+-----
+
+- I built a prototype app that would hold 'tabs' that would use Embedly to scrape keywords from the page and sort the tab into one of the four groups.
+- With the help of another intern JD, using supervised learning, I was able to create a model using popular top sites and the keywords retrieved from them to categories the sites into those 4 groups.
+- Every new tab would be compared to this model and we could classify the correct tab category from that.
+- **show video in the background**
+- One of the reasons I felt the original tab grouping helped me being able to identify the page I wanted from the thumbnail alone, so I have the tabs thumbnails as the screenshot of the page itself.
+- I kept the categories of the groups hardcoded to these four for simplicity of implementation.
+
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+# Mentor for 'good first bug'
+
+- Intended to be trivial for first-time contributors
+- Simple tasks with very clear and concise instructions
+- Sometimes that doesn't always work out
+- You have to figure it out unrelated issues (mostly build things) for them that aren't related to their issue
+
+-----
+
+For me, it was trying to fix the bug myself so that I could see what were the problems they were running into.
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Side Notes
+
+- Write clear instructions to be beginner-friendly, welcoming and clear
+- A full set of instructions (!) with little assumption about the person
+- First-timers tend to run into problems that you don't think about as being a problem
+  - How does mercurial work, pushing to mozreview/try, access control, etc.
+- Be helpful!
+
+-----
+
+- When you start writing instructions for a new contributor, you want to make it as welcoming and clear at what needed to be done with a full set of instructions that they needed to fix it.
+- You have to remember that we have a ridiculously long development process from a new contributors pov. E.g. explaining how mercurial works, pushing to mozreview, push to try, access control to all the previous tools as well.
+- It's incredibly important to be helpful to new contributors - and that's hard when you're trying to solve other problems at the same time.
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+# What I'm Currently Working On
+
+## Activity Stream
+
+- The activity stream is a rich visual feed of your history and bookmarks.
+- It's a new newtab experience for desktop (installed via Test Pilot)
+- We want this on mobile as well to get that cross-platform goodness.
+- I'm working on implementing the layout and UI for it.
+</template>
+
+
+<template layout="bullets" type="text/x-markdown">
+## TL;DR - we want this..
+  - ![desktop](./content/as-desktop.png)
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+  - ![mock](./content/mock.png)
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+  - ![mock](./content/mock-proto-2.png)
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+# Other things I did
+
+## Intern Design Sprint
+
+- We did this!
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+# ty ty
 </template>
 
 <script layout="code" type="text/x-markdown">
